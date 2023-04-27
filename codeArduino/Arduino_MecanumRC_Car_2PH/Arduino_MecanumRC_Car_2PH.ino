@@ -2,8 +2,8 @@
 *Universidad del Magdalena
 *Version v1
 */
-
 #include<Arduino.h>
+
 #include<IBusBM.h> 
 
 IBusBM IBus;     //create IBus object:
@@ -139,7 +139,7 @@ void MoveLeft() { //Move Left:
   digitalWrite (IN4D, HIGH);
 }
 
-void MoveRight() { //Move Left:
+void MoveRight() { //Move Right:
   analogWrite (sPWM, motorSpeed); //Velocidad motores
   //Direccion motor LD - ATRAS
   digitalWrite (IN1D, LOW);
@@ -147,6 +147,102 @@ void MoveRight() { //Move Left:
   //Direccion motor RI - ADELANTE
   digitalWrite (IN3I, HIGH);
   digitalWrite (IN4I, LOW);
+  //Direccion motor LI - ATRAS
+  digitalWrite (IN1I, LOW);
+  digitalWrite (IN2I, HIGH);
+  //Direccion motor RD - ADELANTE
+  digitalWrite (IN3D, HIGH);
+  digitalWrite (IN4D, LOW);
+}
+
+void MoveTopRight() { //Move Top Right:
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  //Direccion motor LD - RELEASE
+  digitalWrite (IN1D, LOW);
+  digitalWrite (IN2D, LOW);
+  //Direccion motor RI - ADELANTE
+  digitalWrite (IN3I, HIGH);
+  digitalWrite (IN4I, LOW);
+  //Direccion motor LI - RELEASE
+  digitalWrite (IN1I, LOW);
+  digitalWrite (IN2I, LOW);
+  //Direccion motor RD - ADELANTE
+  digitalWrite (IN3D, HIGH);
+  digitalWrite (IN4D, LOW);
+}
+
+void MoveTopLeft() { //MOve Top Left:
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  // Direccion motor LD - ADELANTE
+  digitalWrite (IN1D, HIGH);
+  digitalWrite (IN2D, LOW);
+  //Direccion motor RI - RELEASE
+  digitalWrite (IN3I, LOW);
+  digitalWrite (IN4I, LOW);
+  //Direccion motor LI - ADELANTE
+  digitalWrite (IN1I, HIGH);
+  digitalWrite (IN2I, LOW);
+  //Direccion motor RD - RELEASE
+  digitalWrite (IN3D, LOW);
+  digitalWrite (IN4D, LOW);
+}
+
+void MoveBackRight() { //Move Back Right:
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  //Direccion motor LD - ATRAS
+  digitalWrite (IN1D, LOW);
+  digitalWrite (IN2D, HIGH);
+  //Direccion motor RI - RELEASE
+  digitalWrite (IN3I, LOW);
+  digitalWrite (IN4I, LOW);
+  //Direccion motor LI - ATRAS
+  digitalWrite (IN1I, LOW);
+  digitalWrite (IN2I, HIGH);
+  //Direccion motor RD - RELEASE
+  digitalWrite (IN3D, LOW);
+  digitalWrite (IN4D, LOW);
+}
+
+void MoveBackLeft() { //Move Back Left: 
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  // Direccion motor LD - RELEASE
+  digitalWrite (IN1D, LOW);
+  digitalWrite (IN2D, LOW);
+  // Direccion motor RI - ATRAS
+  digitalWrite (IN3I, LOW);
+  digitalWrite (IN4I, HIGH);
+  //Direccion motor LI - RELEASE
+  digitalWrite (IN1I, LOW);
+  digitalWrite (IN2I, LOW);
+  //Direccion motor RD - ATRAS
+  digitalWrite (IN3D, LOW);
+  digitalWrite (IN4D, HIGH);
+}
+
+void RightTurn() { //Turn Right:
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  // Direccion motor LD - ATRAS
+  digitalWrite (IN1D, LOW);
+  digitalWrite (IN2D, HIGH);
+  //Direccion motor RI - ADELANTE
+  digitalWrite (IN3I, HIGH);
+  digitalWrite (IN4I, LOW);
+  //Direccion motor LI - ADELANTE
+  digitalWrite (IN1I, HIGH);
+  digitalWrite (IN2I, LOW);
+  //Direccion motor RD - ATRAS
+  digitalWrite (IN3D, LOW);
+  digitalWrite (IN4D, HIGH);
+}
+
+void LeftTurn() { //Turn Left:
+  analogWrite (sPWM, motorSpeed); //Velocidad motores
+  //Direccion motor LD - ADELANTE
+  digitalWrite (IN1D, HIGH);
+  digitalWrite (IN2D, LOW);
+  // Direccion motor RI - ATRAS
+  digitalWrite (IN3I, LOW);
+  digitalWrite (IN4I, HIGH);
   //Direccion motor LI - ATRAS
   digitalWrite (IN1I, LOW);
   digitalWrite (IN2I, HIGH);
