@@ -1,12 +1,29 @@
 
-/*Arduino Mecanum RC Car 
-*Version 1.0
-*Created by DIY Builder
+/*Arduino Mecanum RC Car V1
+*Taken from DIY Builder
+*-----------------------------------
+*Magtronica Team
+*Universidad del Magdalena
+*Version Mod
 */
+#include <Arduino.h>
 
 //include the library code:
 #include<IBusBM.h>   
 #include<AFMotor.h>
+
+//Funciones de movimiento
+void MoveForward();
+void Stop();
+void MoveBackward ();
+void MoveLeft();
+void MoveRight();
+void MoveTopRight();
+void MoveTopLeft();
+void MoveBackRight();
+void MoveBackLeft();
+void RightTurn();
+void LeftTurn();
 
 IBusBM IBus;     //create IBus object:
 
@@ -77,6 +94,8 @@ void loop() {
     RightTurn();
   }
 }
+
+
 void MoveForward() { //Move Forward:
  motor1.run(FORWARD);                      //Drive motor1 clockwise:
  motor1.setSpeed(motorSpeed);              //Define motor1 speed:
@@ -123,7 +142,7 @@ void MoveRight() { //Move Left:
   motor1.setSpeed(motorSpeed);              //Define motor1 speed:
   motor2.run(FORWARD);                      //Drive motor2 clockwise:
   motor2.setSpeed(motorSpeed);              //Define motor2 speed:
-  motor3.run(BACKWARD);               //Drive motor3 anti-clockwise
+  motor3.run(BACKWARD);                     //Drive motor3 anti-clockwise
   motor3.setSpeed(motorSpeed);              //Define motor3 speed:
   motor4.run(FORWARD);                      //Drive motor4 clockwise:
   motor4.setSpeed(motorSpeed);              //Define motor4 speed:
